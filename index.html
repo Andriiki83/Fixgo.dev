@@ -3,69 +3,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fix&Go</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #c6f7c1, #b3e5fc, #fff59d);
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #c6f7c1, #b3e5fc, #fff59d);
+      color: #333;
+    }
 
-  header {
-    background-color: #2b2b2b;
-    padding: 1em;
-    text-align: center;
-    color: white;
-  }
+    header {
+      background-color: #222;
+      padding: 1em;
+      text-align: center;
+      color: white;
+    }
 
-  .logo {
-    max-width: 200px;
-    margin: 0 auto 0.5em;
-    display: block;
-  }
+    .logo {
+      max-width: 300px;
+      display: block;
+      margin: 0 auto;
+    }
 
-  .language-switcher {
-    margin: 1em 0;
-  }
+    .language-switcher {
+      margin-top: 0.5em;
+    }
 
-  .language-switcher button {
-    margin: 0 0.5em;
-    padding: 0.5em 1em;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+    .language-switcher button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      font-size: 1em;
+      border: none;
+      background-color: #555;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-  .language-switcher button:hover {
-    background-color: #666;
-  }
+    .language-switcher button:hover {
+      background-color: #444;
+    }
 
-  .container {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 1em;
-    text-align: center;
-    background: transparent;
-  }
+    .container {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-  #welcome {
-    font-size: 32px;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    margin-bottom: 0.5em;
-  }
+    .section {
+      margin-top: 2em;
+    }
 
-  footer {
-    text-align: center;
-    padding: 1em;
-    color: #666;
-  }
-</style>
+    footer {
+      text-align: center;
+      padding: 1em;
+      color: #666;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      text-align: left;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    .contact {
+      line-height: 1.8;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -111,23 +130,6 @@
         📧 Email: info@fixgo.dev
       </div>
     </div>
-
-    <div class="section">
-      <h3 id="gallery-title">Repair Gallery</h3>
-      <p id="gallery-desc">Examples of real repair work — soldering, diagnostics, board fixes and more.</p>
-      <div class="gallery">
-        <img src="photo1.jpg" alt="Repair Example 1">
-        <img src="photo2.jpg" alt="Repair Example 2">
-        <img src="photo3.jpg" alt="Repair Example 3">
-        <img src="photo4.jpg" alt="Repair Example 4">
-        <img src="photo5.jpg" alt="Repair Example 5">
-        <img src="photo6.jpg" alt="Repair Example 6">
-        <img src="photo7.jpg" alt="Repair Example 7">
-        <img src="photo8.jpg" alt="Repair Example 8">
-        <img src="photo9.jpg" alt="Repair Example 9">
-        <img src="photo10.jpg" alt="Repair Example 10">
-      </div>
-    </div>
   </div>
 
   <footer>
@@ -141,13 +143,11 @@
         desc: "If you're here, something's broken — but don’t worry, we’ll fix it.<br>We specialize in repairs of phones, laptops, and many types of electronics.<br>Data recovery after water damage or drops — all at fair prices.",
         pricesTitle: "Service Prices",
         contactTitle: "Contact Us",
-        galleryTitle: "Repair Gallery",
-        galleryDesc: "Examples of real repair work — soldering, diagnostics, board fixes and more.",
         prices: [
-          ["Screen Replacement", "$100–350"],
-          ["Battery Replacement", "$50–120"],
-          ["Data Recovery", "from $100"],
-          ["Motherboard Repair", "$100–400"]
+          ["Screen Replacement", "$50–120"],
+          ["Battery Replacement", "$30–70"],
+          ["Data Recovery", "from $80"],
+          ["Motherboard Repair", "$100–250"]
         ],
         contact: "📞 Phone: (747) 774-0777<br>📍 Address: Van Nuys, CA<br>📧 Email: info@fixgo.dev"
       },
@@ -156,13 +156,11 @@
         desc: "Якщо ви тут — щось зламалося. Не хвилюйтесь, ми це виправимо!<br>Ми спеціалізуємося на ремонті телефонів, ноутбуків та іншої електроніки.<br>Відновлення даних після води чи падінь — за справедливими цінами.",
         pricesTitle: "Ціни на послуги",
         contactTitle: "Контакти",
-        galleryTitle: "Галерея ремонтів",
-        galleryDesc: "Приклади справжніх ремонтів — пайка, діагностика, відновлення плат та інше.",
         prices: [
-          ["Заміна екрану", "$100–350"],
-          ["Заміна акумулятора", "$50–120"],
-          ["Відновлення даних", "від $100"],
-          ["Ремонт плати", "$100–400"]
+          ["Заміна екрану", "$50–120"],
+          ["Заміна акумулятора", "$30–70"],
+          ["Відновлення даних", "від $80"],
+          ["Ремонт плати", "$100–250"]
         ],
         contact: "📞 Телефон: (747) 774-0777<br>📍 Адреса: Van Nuys, CA<br>📧 Email: info@fixgo.dev"
       },
@@ -171,13 +169,11 @@
         desc: "Если вы здесь — значит что-то сломалось. Не волнуйтесь, мы это починим!<br>Мы специализируемся на ремонте телефонов, ноутбуков и другой электроники.<br>Восстановление данных после воды или падений — по честным ценам.",
         pricesTitle: "Цены на услуги",
         contactTitle: "Контакты",
-        galleryTitle: "Галерея ремонтов",
-        galleryDesc: "Примеры настоящих ремонтов — пайка, диагностика, восстановление плат и другое.",
         prices: [
-          ["Замена экрана", "$100–350"],
-          ["Замена батареи", "$50–120"],
-          ["Восстановление данных", "от $100"],
-          ["Ремонт платы", "$100–400"]
+          ["Замена экрана", "$50–120"],
+          ["Замена батареи", "$30–70"],
+          ["Восстановление данных", "от $80"],
+          ["Ремонт платы", "$100–250"]
         ],
         contact: "📞 Телефон: (747) 774-0777<br>📍 Адрес: Van Nuys, CA<br>📧 Email: info@fixgo.dev"
       }
@@ -185,15 +181,13 @@
 
     function setLanguage(lang) {
       const t = translations[lang];
-      document.getElementById("welcome").innerHTML = t.welcome;
-      document.getElementById("desc").innerHTML = t.desc;
-      document.getElementById("prices-title").innerText = t.pricesTitle;
-      document.getElementById("contact-title").innerText = t.contactTitle;
-      document.getElementById("gallery-title").innerText = t.galleryTitle;
-      document.getElementById("gallery-desc").innerText = t.galleryDesc;
-      document.getElementById("contact-info").innerHTML = t.contact;
+      document.getElementById('welcome').innerHTML = t.welcome;
+      document.getElementById('desc').innerHTML = t.desc;
+      document.getElementById('prices-title').innerText = t.pricesTitle;
+      document.getElementById('contact-title').innerText = t.contactTitle;
+      document.getElementById('contact-info').innerHTML = t.contact;
 
-      const table = document.getElementById("prices-table");
+      const table = document.getElementById('prices-table');
       table.innerHTML = "";
       t.prices.forEach(([service, price]) => {
         const row = document.createElement("tr");
