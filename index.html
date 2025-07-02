@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fix&Go</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #c6f7c1, #cde8f6);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ffef85;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      color: #2b2b2b;
+    }
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .lang-switch {
+      margin-bottom: 20px;
+    }
+    .lang-switch button {
+      margin-right: 10px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fix&Go</h1>
+  </header>
+  <div class="container">
+    <div class="lang-switch">
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('uk')">Українська</button>
+      <button onclick="setLang('ru')">Русский</button>
+    </div>
+    <div id="content">
+      <!-- Місце для тексту -->
+    </div>
+  </div>
+  <script>
+    const texts = {
+      en: "Welcome to our website! If you're here, something's probably broken :)<br>We repair phones, laptops and other electronics — data recovery, water damage and more.<br>Reasonable prices. Fast turnaround.",
+      uk: "Вітаємо на нашому сайті! Якщо ви тут — значить щось зламалось :)<br>Ми ремонтуємо телефони, ноутбуки та іншу техніку — відновлення після води, падінь та інше.<br>Розумні ціни. Швидко і якісно.",
+      ru: "Добро пожаловать на наш сайт! Если вы здесь — значит что-то сломалось :)<br>Мы чиним телефоны, ноутбуки и другую технику — восстановление данных, после воды и т.п.<br>Доступные цены. Быстро и качественно."
+    };
+
+    function setLang(lang) {
+      document.getElementById('content').innerHTML = texts[lang];
+    }
+
+    setLang('uk');
+  </script>
+</body>
+</html>
