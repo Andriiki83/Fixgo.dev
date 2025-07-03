@@ -5,338 +5,281 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fix&Go</title>
-  
-
-<style>
-  .side-logos {
-    position: fixed;
-    top: 100px;
-    width: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5em;
-    z-index: 10;
-    perspective: 1000px;
-  }
-
-  .left-logos {
-    left: 10px;
-  }
-
-  .right-logos {
-    right: 10px;
-  }
-
-  .side-logos img {
-    width: 70px;
-    height: auto;
-    opacity: 0.95;
-    animation: spin3D infinite linear;
-    transform-style: preserve-3d;
-  }
-
-  @keyframes spin3D {
-    from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-    to { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
-  }
-
-  @media (max-width: 768px) {
-    .side-logos {
-      display: none;
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #c6f7c1, #b3e5fc, #fff59d);
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
-  }
-</style>
 
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #c6f7c1, #b3e5fc, #fff59d);
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-
-  header {
-    background-color: #2b2b2b;
-    padding: 1em;
-    text-align: center;
-    color: white;
-  }
-
-  .logo {
-    max-width: 200px;
-    margin: 0 auto 0.5em;
-    display: block;
-  }
-
-  .language-switcher {
-    margin: 1em 0;
-  }
-
-  .language-switcher button {
-    margin: 0 0.5em;
-    padding: 0.5em 1em;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .language-switcher button:hover {
-    background-color: #666;
-  }
-
-  .container {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 1em;
-    text-align: center;
-    background: transparent;
-  }
-
-  #welcome {
-    font-size: 32px;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    margin-bottom: 0.5em;
-  }
-
-  footer {
-    text-align: center;
-    padding: 1em;
-    color: #666;
-  }
-
-  .section {
-    margin-top: 2em;
-  }
-
-  .section h3 {
-    font-size: 24px;
-    margin-bottom: 0.5em;
-  }
-
-  table {
-    margin: 0 auto;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 600px;
-  }
-
-  th, td {
-    border: 1px solid #ccc;
-    padding: 0.5em;
-  }
-
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-    padding: 1em 0;
-  }
-
-  .gallery img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-
-  .side-logos {
-    position: fixed;
-    top: 100px;
-    width: 70px;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    z-index: 10;
-  }
-
-  .left-logos {
-    left: 10px;
-  }
-
-  .right-logos {
-    right: 10px;
-  }
-
-  .side-logos img {
-    width: 70px;
-    height: auto;
-    opacity: 0.95;
-    animation-name: spin;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  @media (max-width: 768px) {
-    .side-logos {
-      display: none;
+    header {
+      background-color: #2b2b2b;
+      padding: 1em;
+      text-align: center;
+      color: white;
     }
-  }
-</style>
 
+    .logo {
+      max-width: 200px;
+      margin: 0 auto 0.5em;
+      display: block;
+    }
+
+    .language-switcher {
+      margin: 1em 0;
+    }
+
+    .language-switcher button {
+      margin: 0 0.5em;
+      padding: 0.5em 1em;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .language-switcher button:hover {
+      background-color: #666;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 1em;
+      text-align: center;
+      background: transparent;
+    }
+
+    #welcome {
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.5em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      color: #666;
+    }
+
+    .section {
+      margin-top: 2em;
+    }
+
+    .section h3 {
+      font-size: 24px;
+      margin-bottom: 0.5em;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      padding: 1em 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .side-logos {
+      position: fixed;
+      top: 100px;
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5em;
+      z-index: 10;
+      perspective: 1000px;
+    }
+
+    .left-logos {
+      left: 10px;
+    }
+
+    .right-logos {
+      right: 10px;
+    }
+
+    .side-logos img {
+      width: 70px;
+      height: auto;
+      opacity: 0.95;
+      animation: spin3D infinite linear;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes spin3D {
+      from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+      to { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .side-logos {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-  
-<div class="side-logos left-logos">
-  <img src="apple.png" alt="Apple" />
-  <img src="samsung.png" alt="Samsung" />
-  <img src="xiaomi.png" alt="Xiaomi" />
-  <img src="motorola.png" alt="Motorola" />
-  <img src="huawei.png" alt="Huawei" />
-  <img src="google.png" alt="Google" />
-</div>
 
-<div class="side-logos right-logos">
-  <img src="xiaomi2.png" alt="Xiaomi 2" />
-  <img src="motorola2.png" alt="Motorola 2" />
-  <img src="acer.png" alt="Acer" />
-  <img src="hp.png" alt="HP" />
-  <img src="sony.png" alt="Sony" />
-  <img src="android.png" alt="Android" />
-</div>
-
-  
-<header>
-  <img src="fixgo_logo_transparent.png" alt="Fix&Go Logo" class="logo" />
-  <div class="language-switcher">
-    <button onclick="setLanguage('en')">EN</button>
-    <button onclick="setLanguage('ua')">UA</button>
-    <button onclick="setLanguage('ru')">RU</button>
-  </div>
-</header>
-
-<div class="container">
-  <h2 id="welcome">Welcome to our website!</h2>
-  <p id="desc">
-    If you're here, something's broken — but don't worry, we'll fix it.<br>
-    We specialize in repairs of phones, laptops, and many types of electronics.<br>
-    Data recovery after water damage or drops — all at fair prices.
-  </p>
-
-  <div class="section">
-    <h3 id="prices-title">Service Prices</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Estimated Price</th>
-        </tr>
-      </thead>
-      <tbody id="prices-table">
-        <tr><td>Screen Replacement</td><td>$50–120</td></tr>
-        <tr><td>Battery Replacement</td><td>$30–70</td></tr>
-        <tr><td>Data Recovery</td><td>from $80</td></tr>
-        <tr><td>Motherboard Repair</td><td>$100–250</td></tr>
-      
-<tr><td>Back Cover Replacement</td><td>$40–90</td></tr>
-<tr><td>Windows Reinstallation</td><td>$50–100</td></tr>
-</tbody>
-    </table>
+  <!-- Обертові логотипи -->
+  <div class="side-logos left-logos">
+    <img src="apple.png" alt="Apple" />
+    <img src="samsung.png" alt="Samsung" />
+    <img src="xiaomi.png" alt="Xiaomi" />
+    <img src="motorola.png" alt="Motorola" />
+    <img src="huawei.png" alt="Huawei" />
+    <img src="google.png" alt="Google" />
   </div>
 
-  <div class="section">
-    <h3 id="contact-title">Contact Us</h3>
-    <div id="contact-info">
-      📞 Phone: (747) 774-0777<br>
-      📍 Address: Van Nuys, CA<br>
-      ✉️ Email: info@fixgo.dev
+  <div class="side-logos right-logos">
+    <img src="xiaomi2.png" alt="Xiaomi 2" />
+    <img src="motorola2.png" alt="Motorola 2" />
+    <img src="acer.png" alt="Acer" />
+    <img src="hp.png" alt="HP" />
+    <img src="sony.png" alt="Sony" />
+    <img src="android.png" alt="Android" />
+  </div>
+
+  <!-- Основний вміст -->
+  <header>
+    <img src="fixgo_logo_transparent.png" alt="Fix&Go Logo" class="logo" />
+    <div class="language-switcher">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('ua')">UA</button>
+      <button onclick="setLanguage('ru')">RU</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2 id="welcome">Welcome to our website!</h2>
+    <p id="desc">
+      If you're here, something's broken — but don't worry, we'll fix it.<br>
+      We specialize in repairs of phones, laptops, and many types of electronics.<br>
+      Data recovery after water damage or drops — all at fair prices.
+    </p>
+
+    <div class="section">
+      <h3 id="prices-title">Service Prices</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Estimated Price</th>
+          </tr>
+        </thead>
+        <tbody id="prices-table">
+          <tr><td>Screen Replacement</td><td>$50–120</td></tr>
+          <tr><td>Battery Replacement</td><td>$30–70</td></tr>
+          <tr><td>Data Recovery</td><td>from $80</td></tr>
+          <tr><td>Motherboard Repair</td><td>$100–250</td></tr>
+          <tr><td>Back Cover Replacement</td><td>$40–90</td></tr>
+          <tr><td>Windows Reinstallation</td><td>$50–100</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3 id="contact-title">Contact Us</h3>
+      <div id="contact-info">
+        📞 Phone: (747) 774-0777<br>
+        📍 Address: Van Nuys, CA<br>
+        ✉️ Email: info@fixgo.dev
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 id="gallery-title">Repair Gallery</h3>
+      <p id="gallery-desc">Examples of real repair work — soldering, diagnostics, board fixes and more.</p>
+      <div class="gallery">
+        <img src="repair1.jpg" alt="Repair 1" />
+        <img src="repair2.jpg" alt="Repair 2" />
+        <img src="repair3.jpg" alt="Repair 3" />
+        <img src="repair4.jpg" alt="Repair 4" />
+        <img src="repair5.jpg" alt="Repair 5" />
+        <img src="repair6.jpg" alt="Repair 6" />
+        <img src="repair7.jpg" alt="Repair 7" />
+        <img src="repair8.jpg" alt="Repair 8" />
+        <img src="repair9.jpg" alt="Repair 9" />
+        <img src="repair10.jpg" alt="Repair 10" />
+      </div>
     </div>
   </div>
 
-  <div class="section">
-    <h3 id="gallery-title">Repair Gallery</h3>
-    <p id="gallery-desc">Examples of real repair work — soldering, diagnostics, board fixes and more.</p>
-    <div class="gallery">
-      <img src="repair1.jpg" alt="Repair 1" />
-      <img src="repair2.jpg" alt="Repair 2" />
-      <img src="repair3.jpg" alt="Repair 3" />
-      <img src="repair4.jpg" alt="Repair 4" />
-      <img src="repair5.jpg" alt="Repair 5" />
-      <img src="repair6.jpg" alt="Repair 6" />
-      <img src="repair7.jpg" alt="Repair 7" />
-      <img src="repair8.jpg" alt="Repair 8" />
-      <img src="repair9.jpg" alt="Repair 9" />
-      <img src="repair10.jpg" alt="Repair 10" />
-    </div>
-  </div>
-</div>
+  <footer>
+    © 2025 Fix&Go. All rights reserved.
+  </footer>
 
-<footer>
-  © 2025 Fix&Go. All rights reserved.
-</footer>
+  <script>
+    const translations = {
+      en: {
+        welcome: "Welcome to our website!",
+        desc: "If you're here, something's broken — but don't worry, we'll fix it.<br>We specialize in repairs of phones, laptops, and many types of electronics.<br>Data recovery after water damage or drops — all at fair prices.",
+        prices_title: "Service Prices",
+        contact_title: "Contact Us",
+        gallery_title: "Repair Gallery",
+        gallery_desc: "Examples of real repair work — soldering, diagnostics, board fixes and more."
+      },
+      ua: {
+        welcome: "Ласкаво просимо на наш сайт!",
+        desc: "Якщо ви тут, значить щось зламалось — не хвилюйтесь, ми це виправимо.<br>Ми спеціалізуємось на ремонті телефонів, ноутбуків та іншої електроніки.<br>Відновлення даних після води або падінь — за чесними цінами.",
+        prices_title: "Ціни на послуги",
+        contact_title: "Контакти",
+        gallery_title: "Галерея ремонтів",
+        gallery_desc: "Приклади реальних ремонтів — пайка, діагностика, ремонт плат та інше."
+      },
+      ru: {
+        welcome: "Добро пожаловать на наш сайт!",
+        desc: "Если вы здесь, значит что-то сломалось — не волнуйтесь, мы это починим.<br>Мы специализируемся на ремонте телефонов, ноутбуков и другой электроники.<br>Восстановление данных после воды или падений — по честным ценам.",
+        prices_title: "Цены на услуги",
+        contact_title: "Контакты",
+        gallery_title: "Галерея ремонтов",
+        gallery_desc: "Примеры реальных ремонтов — пайка, диагностика, ремонт плат и другое."
+      }
+    };
 
-  
-<script>
-  const logos = document.querySelectorAll(".side-logos img");
-  logos.forEach((logo) => {
-    const speed = (Math.random() * 10 + 10).toFixed(1);
-    const direction = Math.random() > 0.5 ? "normal" : "reverse";
-    logo.style.animationDuration = speed + "s";
-    logo.style.animationDirection = direction;
-  });
-</script>
-
-
-<script>
-  const translations = {
-    en: {
-      welcome: "Welcome to our website!",
-      desc: "If you're here, something's broken — but don't worry, we'll fix it.<br>We specialize in repairs of phones, laptops, and many types of electronics.<br>Data recovery after water damage or drops — all at fair prices.",
-      prices_title: "Service Prices",
-      contact_title: "Contact Us",
-      gallery_title: "Repair Gallery",
-      gallery_desc: "Examples of real repair work — soldering, diagnostics, board fixes and more."
-    },
-    ua: {
-      welcome: "Ласкаво просимо на наш сайт!",
-      desc: "Якщо ви тут, значить щось зламалось — не хвилюйтесь, ми це виправимо.<br>Ми спеціалізуємось на ремонті телефонів, ноутбуків та іншої електроніки.<br>Відновлення даних після води або падінь — за чесними цінами.",
-      prices_title: "Ціни на послуги",
-      contact_title: "Контакти",
-      gallery_title: "Галерея ремонтів",
-      gallery_desc: "Приклади реальних ремонтів — пайка, діагностика, ремонт плат та інше."
-    },
-    ru: {
-      welcome: "Добро пожаловать на наш сайт!",
-      desc: "Если вы здесь, значит что-то сломалось — не волнуйтесь, мы это починим.<br>Мы специализируемся на ремонте телефонов, ноутбуков и другой электроники.<br>Восстановление данных после воды или падений — по честным ценам.",
-      prices_title: "Цены на услуги",
-      contact_title: "Контакты",
-      gallery_title: "Галерея ремонтов",
-      gallery_desc: "Примеры реальных ремонтов — пайка, диагностика, ремонт плат и другое."
+    function setLanguage(lang) {
+      document.getElementById("welcome").innerHTML = translations[lang].welcome;
+      document.getElementById("desc").innerHTML = translations[lang].desc;
+      document.getElementById("prices-title").innerText = translations[lang].prices_title;
+      document.getElementById("contact-title").innerText = translations[lang].contact_title;
+      document.getElementById("gallery-title").innerText = translations[lang].gallery_title;
+      document.getElementById("gallery-desc").innerText = translations[lang].gallery_desc;
     }
-  };
 
-  function setLanguage(lang) {
-    document.getElementById("welcome").innerHTML = translations[lang].welcome;
-    document.getElementById("desc").innerHTML = translations[lang].desc;
-    document.getElementById("prices-title").innerText = translations[lang].prices_title;
-    document.getElementById("contact-title").innerText = translations[lang].contact_title;
-    document.getElementById("gallery-title").innerText = translations[lang].gallery_title;
-    document.getElementById("gallery-desc").innerText = translations[lang].gallery_desc;
-  }
-</script>
-
-
-<script>
-  const logos = document.querySelectorAll(".side-logos img");
-  logos.forEach((logo) => {
-    const duration = (Math.random() * 15 + 10).toFixed(1); // 10–25s
-    logo.style.animationDuration = duration + "s";
-    // Напрямок і фазу можна урізноманітнити через випадкове початкове обертання
-    const rotX = Math.floor(Math.random() * 360);
-    const rotY = Math.floor(Math.random() * 360);
-    const rotZ = Math.floor(Math.random() * 360);
-    logo.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)`;
-  });
-</script>
+    // хаотичне обертання з 3D
+    const logos = document.querySelectorAll(".side-logos img");
+    logos.forEach((logo) => {
+      const duration = (Math.random() * 15 + 10).toFixed(1);
+      logo.style.animationDuration = duration + "s";
+      const rotX = Math.floor(Math.random() * 360);
+      const rotY = Math.floor(Math.random() * 360);
+      const rotZ = Math.floor(Math.random() * 360);
+      logo.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)`;
+    });
+  </script>
 
 </body>
 </html>
