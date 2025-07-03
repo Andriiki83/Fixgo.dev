@@ -6,7 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fix&Go</title>
   
+
 <style>
+  .side-logos {
+    position: fixed;
+    top: 100px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    z-index: 10;
+    perspective: 1000px;
+  }
+
+  .left-logos {
+    left: 10px;
+  }
+
+  .right-logos {
+    right: 10px;
+  }
+
+  .side-logos img {
+    width: 70px;
+    height: auto;
+    opacity: 0.95;
+    animation: spin3D infinite linear;
+    transform-style: preserve-3d;
+  }
+
+  @keyframes spin3D {
+    from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+  }
+
+  @media (max-width: 768px) {
+    .side-logos {
+      display: none;
+    }
+  }
+</style>
+
   body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #c6f7c1, #b3e5fc, #fff59d);
@@ -123,7 +163,7 @@
   }
 
   .side-logos img {
-    width: 100px;
+    width: 70px;
     height: auto;
     opacity: 0.95;
     animation-name: spin;
@@ -242,6 +282,59 @@
     const direction = Math.random() > 0.5 ? "normal" : "reverse";
     logo.style.animationDuration = speed + "s";
     logo.style.animationDirection = direction;
+  });
+</script>
+
+
+<script>
+  const translations = {
+    en: {
+      welcome: "Welcome to our website!",
+      desc: "If you're here, something's broken — but don't worry, we'll fix it.<br>We specialize in repairs of phones, laptops, and many types of electronics.<br>Data recovery after water damage or drops — all at fair prices.",
+      prices_title: "Service Prices",
+      contact_title: "Contact Us",
+      gallery_title: "Repair Gallery",
+      gallery_desc: "Examples of real repair work — soldering, diagnostics, board fixes and more."
+    },
+    ua: {
+      welcome: "Ласкаво просимо на наш сайт!",
+      desc: "Якщо ви тут, значить щось зламалось — не хвилюйтесь, ми це виправимо.<br>Ми спеціалізуємось на ремонті телефонів, ноутбуків та іншої електроніки.<br>Відновлення даних після води або падінь — за чесними цінами.",
+      prices_title: "Ціни на послуги",
+      contact_title: "Контакти",
+      gallery_title: "Галерея ремонтів",
+      gallery_desc: "Приклади реальних ремонтів — пайка, діагностика, ремонт плат та інше."
+    },
+    ru: {
+      welcome: "Добро пожаловать на наш сайт!",
+      desc: "Если вы здесь, значит что-то сломалось — не волнуйтесь, мы это починим.<br>Мы специализируемся на ремонте телефонов, ноутбуков и другой электроники.<br>Восстановление данных после воды или падений — по честным ценам.",
+      prices_title: "Цены на услуги",
+      contact_title: "Контакты",
+      gallery_title: "Галерея ремонтов",
+      gallery_desc: "Примеры реальных ремонтов — пайка, диагностика, ремонт плат и другое."
+    }
+  };
+
+  function setLanguage(lang) {
+    document.getElementById("welcome").innerHTML = translations[lang].welcome;
+    document.getElementById("desc").innerHTML = translations[lang].desc;
+    document.getElementById("prices-title").innerText = translations[lang].prices_title;
+    document.getElementById("contact-title").innerText = translations[lang].contact_title;
+    document.getElementById("gallery-title").innerText = translations[lang].gallery_title;
+    document.getElementById("gallery-desc").innerText = translations[lang].gallery_desc;
+  }
+</script>
+
+
+<script>
+  const logos = document.querySelectorAll(".side-logos img");
+  logos.forEach((logo) => {
+    const duration = (Math.random() * 15 + 10).toFixed(1); // 10–25s
+    logo.style.animationDuration = duration + "s";
+    // Напрямок і фазу можна урізноманітнити через випадкове початкове обертання
+    const rotX = Math.floor(Math.random() * 360);
+    const rotY = Math.floor(Math.random() * 360);
+    const rotZ = Math.floor(Math.random() * 360);
+    logo.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)`;
   });
 </script>
 
