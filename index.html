@@ -106,7 +106,7 @@
     .side-logos {
       position: fixed;
       top: 100px;
-      width: 100px;
+      width: 80px;
       display: flex;
       flex-direction: column;
       gap: 2.5em;
@@ -123,7 +123,7 @@
     }
 
     .side-logos img {
-      width: 150px;
+      width: 70px;
       height: auto;
       opacity: 0.95;
       animation: spin3D infinite linear;
@@ -248,7 +248,16 @@
         prices_title: "Ціни на послуги",
         contact_title: "Контакти",
         gallery_title: "Галерея ремонтів",
-        gallery_desc: "Приклади реальних ремонтів — пайка, діагностика, ремонт плат та інше."
+        gallery_desc: "Приклади реальних ремонтів — пайка, діагностика, ремонт плат та інше.",
+        prices_table: `
+          <tr><td>Заміна екрану</td><td>$50–120</td></tr>
+          <tr><td>Заміна батареї</td><td>$30–70</td></tr>
+          <tr><td>Відновлення даних</td><td>від $80</td></tr>
+          <tr><td>Ремонт материнської плати</td><td>$100–250</td></tr>
+          <tr><td>Заміна задньої кришки</td><td>$40–90</td></tr>
+          <tr><td>Переустановка Windows</td><td>$50–100</td></tr>
+        `
+
       },
       ru: {
         welcome: "Добро пожаловать на наш сайт!",
@@ -256,7 +265,16 @@
         prices_title: "Цены на услуги",
         contact_title: "Контакты",
         gallery_title: "Галерея ремонтов",
-        gallery_desc: "Примеры реальных ремонтов — пайка, диагностика, ремонт плат и другое."
+        gallery_desc: "Примеры реальных ремонтов — пайка, диагностика, ремонт плат и другое.",
+        prices_table: `
+          <tr><td>Замена экрана</td><td>$50–120</td></tr>
+          <tr><td>Замена батареи</td><td>$30–70</td></tr>
+          <tr><td>Восстановление данных</td><td>от $80</td></tr>
+          <tr><td>Ремонт материнской платы</td><td>$100–250</td></tr>
+          <tr><td>Замена задней крышки</td><td>$40–90</td></tr>
+          <tr><td>Переустановка Windows</td><td>$50–100</td></tr>
+        `
+
       }
     };
 
@@ -267,6 +285,7 @@
       document.getElementById("contact-title").innerText = translations[lang].contact_title;
       document.getElementById("gallery-title").innerText = translations[lang].gallery_title;
       document.getElementById("gallery-desc").innerText = translations[lang].gallery_desc;
+      if (translations[lang].prices_table) document.getElementById("prices-table").innerHTML = translations[lang].prices_table;
     }
 
     // хаотичне обертання з 3D
