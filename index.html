@@ -166,40 +166,31 @@
 
 
 
+
+
 <style>
   .header-logos {
     position: absolute;
     top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    width: 100px;
+    height: 220px;
+    display: block;
+    z-index: 5;
   }
 
   .header-logos.left {
-    left: 15px;
+    left: 20px;
   }
 
   .header-logos.right {
-    right: 15px;
+    right: 20px;
   }
 
   .header-logos img {
+    position: absolute;
     width: 60px;
     height: auto;
     opacity: 0.95;
-    animation: float 4s ease-in-out infinite, rotate 6s ease-in-out infinite alternate;
-    transform-origin: center;
-  }
-
-  @keyframes float {
-    0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
-  }
-
-  @keyframes rotate {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(4deg); }
   }
 
   @media (max-width: 768px) {
@@ -223,12 +214,16 @@
 <img alt="Huawei" src="huawei.png"/>
 </div>
 
+
+
 <img alt="Fix&amp;Go Logo" class="logo" src="fixgo_logo_transparent.png"/>
 <div class="language-switcher">
 <button onclick="setLanguage('en')">EN</button>
 <button onclick="setLanguage('ua')">UA</button>
 <button onclick="setLanguage('ru')">RU</button>
 </div>
+
+
 
 <div class="header-logos right">
 <img alt="Google" src="google.png"/>
@@ -365,5 +360,33 @@
 
 
 
+
+<script>
+  window.onload = function () {
+    function animateInContainer(container) {
+      const logos = container.querySelectorAll("img");
+      logos.forEach((logo) => {
+        moveLogo(logo, container);
+      });
+    }
+
+    function moveLogo(logo, container) {
+      const box = container.getBoundingClientRect();
+      const maxX = box.width - logo.clientWidth;
+      const maxY = box.height - logo.clientHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      logo.style.transition = "transform 4s ease-in-out";
+      logo.style.transform = "translate(" + x + "px, " + y + "px)";
+
+      setTimeout(() => moveLogo(logo, container), 4000);
+    }
+
+    animateInContainer(document.querySelector(".header-logos.left"));
+    animateInContainer(document.querySelector(".header-logos.right"));
+  };
+</script>
 </body>
 </html>
