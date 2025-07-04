@@ -299,38 +299,42 @@
     });
   </script>
 
+
+
 <script>
-  const floatingBrands = ["apple", "samsung", "xiaomi", "motorola", "huawei", "google", "acer", "hp", "sony", "android"];
-  const screenW = window.innerWidth;
-  const screenH = window.innerHeight;
-  const centerLimit = 450;
+  window.onload = function () {
+    const floatingBrands = ["apple", "samsung", "xiaomi", "motorola", "huawei", "google", "acer", "hp", "sony", "android"];
+    const centerLimit = 450;
 
-  function randomSideZone() {
-    let x;
-    if (Math.random() < 0.5) {
-      x = Math.random() * (screenW / 2 - centerLimit - 50); // left zone
-    } else {
-      x = (screenW / 2 + centerLimit) + Math.random() * (screenW / 2 - centerLimit - 50); // right zone
+    function randomSideZone() {
+      const screenW = window.innerWidth;
+      const screenH = window.innerHeight;
+      let x;
+      if (Math.random() < 0.5) {
+        x = Math.random() * (screenW / 2 - centerLimit - 50); // зліва
+      } else {
+        x = (screenW / 2 + centerLimit) + Math.random() * (screenW / 2 - centerLimit - 50); // справа
+      }
+      let y = Math.random() * (screenH - 120);
+      return [x, y];
     }
-    let y = Math.random() * (screenH - 100);
-    return [x, y];
-  }
 
-  function animateLogo(el) {
-    const [x, y] = randomSideZone();
-    el.style.transition = "transform 5s linear";
-    el.style.transform = "translate(" + x + "px, " + y + "px)";
-    setTimeout(() => animateLogo(el), 5000);
-  }
+    function animateLogo(el) {
+      const [x, y] = randomSideZone();
+      el.style.transition = "transform 5s linear";
+      el.style.transform = "translate(" + x + "px, " + y + "px)";
+      setTimeout(() => animateLogo(el), 5000);
+    }
 
-  floatingBrands.forEach((name) => {
-    const img = document.createElement("img");
-    img.src = name + ".png";
-    img.alt = name;
-    img.className = "floating-logo";
-    document.body.appendChild(img);
-    animateLogo(img);
-  });
+    floatingBrands.forEach((name) => {
+      const img = document.createElement("img");
+      img.src = name + ".png";
+      img.alt = name;
+      img.className = "floating-logo";
+      document.body.appendChild(img);
+      animateLogo(img);
+    });
+  };
 </script>
 </body>
 </html>
