@@ -164,20 +164,15 @@
 
 
 
+
+
 <style>
   .header-logos {
     position: absolute;
     top: 10px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-  }
-
-  .header-logos img {
-    width: 80px;
-    height: auto;
-    opacity: 0.95;
-    animation: floatLogo 4s ease-in-out infinite, sway 6s ease-in-out infinite alternate;
+    gap: 12px;
   }
 
   .header-logos.left {
@@ -188,14 +183,22 @@
     right: 15px;
   }
 
-  @keyframes floatLogo {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+  .header-logos img {
+    width: 60px;
+    height: auto;
+    opacity: 0.95;
+    animation: float 4s ease-in-out infinite, rotate 6s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
   }
 
-  @keyframes sway {
-    0% { transform: rotate(0deg); }
+  @keyframes rotate {
+    0%   { transform: rotate(0deg); }
     100% { transform: rotate(4deg); }
   }
 
