@@ -161,6 +161,42 @@
     pointer-events: none;
   }
 </style>
+
+<style>
+  .header-logos {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-logos img {
+    width: 40px;
+    height: auto;
+    opacity: 0.9;
+    animation: rotateY 6s linear infinite;
+  }
+
+  .header-logos.left {
+    left: 10px;
+  }
+
+  .header-logos.right {
+    right: 10px;
+  }
+
+  @keyframes rotateY {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
+
+  @media (max-width: 768px) {
+    .header-logos {
+      display: none;
+    }
+  }
+</style>
 </head>
 <body>
 <!-- ќбертов≥ логотипи -->
@@ -168,11 +204,27 @@
 
 <!-- ќсновний вм≥ст -->
 <header>
+<div class="header-logos left">
+<img alt="Apple" src="apple.png"/>
+<img alt="Samsung" src="samsung.png"/>
+<img alt="Xiaomi" src="xiaomi.png"/>
+<img alt="Motorola" src="motorola.png"/>
+<img alt="Huawei" src="huawei.png"/>
+</div>
+
 <img alt="Fix&amp;Go Logo" class="logo" src="fixgo_logo_transparent.png"/>
 <div class="language-switcher">
 <button onclick="setLanguage('en')">EN</button>
 <button onclick="setLanguage('ua')">UA</button>
 <button onclick="setLanguage('ru')">RU</button>
+</div>
+
+<div class="header-logos right">
+<img alt="Google" src="google.png"/>
+<img alt="Acer" src="acer.png"/>
+<img alt="HP" src="hp.png"/>
+<img alt="Sony" src="sony.png"/>
+<img alt="Android" src="android.png"/>
 </div>
 </header>
 <div class="container">
@@ -301,40 +353,6 @@
 
 
 
-<script>
-  window.onload = function () {
-    const floatingBrands = ["apple", "samsung", "xiaomi", "motorola", "huawei", "google", "acer", "hp", "sony", "android"];
-    const centerLimit = 450;
 
-    function randomSideZone() {
-      const screenW = window.innerWidth;
-      const screenH = window.innerHeight;
-      let x;
-      if (Math.random() < 0.5) {
-        x = Math.random() * (screenW / 2 - centerLimit - 50); // зліва
-      } else {
-        x = (screenW / 2 + centerLimit) + Math.random() * (screenW / 2 - centerLimit - 50); // справа
-      }
-      let y = Math.random() * (screenH - 120);
-      return [x, y];
-    }
-
-    function animateLogo(el) {
-      const [x, y] = randomSideZone();
-      el.style.transition = "transform 5s linear";
-      el.style.transform = "translate(" + x + "px, " + y + "px)";
-      setTimeout(() => animateLogo(el), 5000);
-    }
-
-    floatingBrands.forEach((name) => {
-      const img = document.createElement("img");
-      img.src = name + ".png";
-      img.alt = name;
-      img.className = "floating-logo";
-      document.body.appendChild(img);
-      animateLogo(img);
-    });
-  };
-</script>
 </body>
 </html>
