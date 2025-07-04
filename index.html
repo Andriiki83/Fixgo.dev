@@ -361,13 +361,27 @@
 
 
 
+
+
 <script>
   window.onload = function () {
     function animateInContainer(container) {
       const logos = container.querySelectorAll("img");
       logos.forEach((logo) => {
+        setInitialPosition(logo, container);
         moveLogo(logo, container);
       });
+    }
+
+    function setInitialPosition(logo, container) {
+      const box = container.getBoundingClientRect();
+      const maxX = box.width - logo.clientWidth;
+      const maxY = box.height - logo.clientHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      logo.style.transform = "translate(" + x + "px, " + y + "px)";
     }
 
     function moveLogo(logo, container) {
