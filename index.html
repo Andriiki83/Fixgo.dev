@@ -213,7 +213,7 @@
   width: 300px;
   height: 150px;
   margin: 1em auto 0;
-  animation: rotateHalf 30s linear infinite;
+  animation: rotateHalf 45s linear infinite;
 }
 
 .half-orbit-logo {
@@ -270,7 +270,7 @@
 .logo-train-track {
   display: flex;
   gap: 30px;
-  animation: moveLogos 30s linear infinite;
+  animation: moveLogos 45s linear infinite;
 }
 
 .logo-train-img {
@@ -282,6 +282,11 @@
 @keyframes moveLogos {
   from { transform: translateX(-100%); }
   to   { transform: translateX(100%); }
+}
+
+.logo-train-img[alt="apple"],
+.logo-train-img[alt="sony"] {
+  filter: brightness(0) invert(1);
 }
 </style>
 </head>
