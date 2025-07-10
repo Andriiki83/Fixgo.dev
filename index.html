@@ -258,11 +258,43 @@
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.orbit-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.saturn-orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  animation: spin 40s linear infinite;
+  z-index: 1;
+}
+
+.logo-center-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.logo {
+  max-width: 120px;
+  margin: 0 auto;
+}
 </style>
 </head>
 <body>
-<header>
-<div class="saturn-orbit"><img alt="apple" class="orbit-logo-saturn" src="apple.png" style="transform: rotate(0.0deg) translateX(150px) rotate(-0.0deg);"/><img alt="samsung" class="orbit-logo-saturn" src="samsung.png" style="transform: rotate(30.0deg) translateX(150px) rotate(-30.0deg);"/><img alt="xiaomi" class="orbit-logo-saturn" src="xiaomi.png" style="transform: rotate(60.0deg) translateX(150px) rotate(-60.0deg);"/><img alt="motorola" class="orbit-logo-saturn" src="motorola.png" style="transform: rotate(90.0deg) translateX(150px) rotate(-90.0deg);"/><img alt="huawei" class="orbit-logo-saturn" src="huawei.png" style="transform: rotate(120.0deg) translateX(150px) rotate(-120.0deg);"/><img alt="google" class="orbit-logo-saturn" src="google.png" style="transform: rotate(150.0deg) translateX(150px) rotate(-150.0deg);"/><img alt="acer" class="orbit-logo-saturn" src="acer.png" style="transform: rotate(180.0deg) translateX(150px) rotate(-180.0deg);"/><img alt="hp" class="orbit-logo-saturn" src="hp.png" style="transform: rotate(210.0deg) translateX(150px) rotate(-210.0deg);"/><img alt="sony" class="orbit-logo-saturn" src="sony.png" style="transform: rotate(240.0deg) translateX(150px) rotate(-240.0deg);"/><img alt="android" class="orbit-logo-saturn" src="android.png" style="transform: rotate(270.0deg) translateX(150px) rotate(-270.0deg);"/><img alt="revl" class="orbit-logo-saturn" src="revl.png" style="transform: rotate(300.0deg) translateX(150px) rotate(-300.0deg);"/><img alt="lg" class="orbit-logo-saturn" src="lg.png" style="transform: rotate(330.0deg) translateX(150px) rotate(-330.0deg);"/></div><div class="logo-center-wrapper"><img alt="Fix&amp;Go Logo" class="logo" src="fixgo_logo_transparent.png"/></div>
+<header><div class="orbit-container"><div class="saturn-orbit"><img alt="apple" class="orbit-logo-saturn" src="apple.png" style="transform: rotate(0.0deg) translateX(150px) rotate(-0.0deg);"/><img alt="samsung" class="orbit-logo-saturn" src="samsung.png" style="transform: rotate(30.0deg) translateX(150px) rotate(-30.0deg);"/><img alt="xiaomi" class="orbit-logo-saturn" src="xiaomi.png" style="transform: rotate(60.0deg) translateX(150px) rotate(-60.0deg);"/><img alt="motorola" class="orbit-logo-saturn" src="motorola.png" style="transform: rotate(90.0deg) translateX(150px) rotate(-90.0deg);"/><img alt="huawei" class="orbit-logo-saturn" src="huawei.png" style="transform: rotate(120.0deg) translateX(150px) rotate(-120.0deg);"/><img alt="google" class="orbit-logo-saturn" src="google.png" style="transform: rotate(150.0deg) translateX(150px) rotate(-150.0deg);"/><img alt="acer" class="orbit-logo-saturn" src="acer.png" style="transform: rotate(180.0deg) translateX(150px) rotate(-180.0deg);"/><img alt="hp" class="orbit-logo-saturn" src="hp.png" style="transform: rotate(210.0deg) translateX(150px) rotate(-210.0deg);"/><img alt="sony" class="orbit-logo-saturn" src="sony.png" style="transform: rotate(240.0deg) translateX(150px) rotate(-240.0deg);"/><img alt="android" class="orbit-logo-saturn" src="android.png" style="transform: rotate(270.0deg) translateX(150px) rotate(-270.0deg);"/><img alt="revl" class="orbit-logo-saturn" src="revl.png" style="transform: rotate(300.0deg) translateX(150px) rotate(-300.0deg);"/><img alt="lg" class="orbit-logo-saturn" src="lg.png" style="transform: rotate(330.0deg) translateX(150px) rotate(-330.0deg);"/></div><div class="logo-center-wrapper"><img alt="Fix&amp;Go Logo" class="logo" src="fixgo_logo_transparent.png"/></div></div>
+
 <div class="language-switcher">
 <button onclick="setLanguage('en')">EN</button>
 <button onclick="setLanguage('ua')">UA</button>
