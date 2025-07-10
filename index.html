@@ -229,11 +229,40 @@
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.saturn-orbit {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  animation: spin 40s linear infinite;
+  z-index: 1;
+}
+
+.orbit-logo-saturn {
+  position: absolute;
+  top: 125px;
+  left: 125px;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transform-origin: 25px -100px;
+}
+
+.logo-center-wrapper {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 </style>
 </head>
 <body>
 <header>
-<img alt="Fix&amp;Go Logo" class="logo" src="fixgo_logo_transparent.png"/><div class="half-orbit-wrapper"><img alt="apple" class="half-orbit-logo" src="apple.png" style="transform: rotate(0.0deg) translateX(120px) rotate(-0.0deg);"/><img alt="samsung" class="half-orbit-logo" src="samsung.png" style="transform: rotate(30.0deg) translateX(120px) rotate(-30.0deg);"/><img alt="xiaomi" class="half-orbit-logo" src="xiaomi.png" style="transform: rotate(60.0deg) translateX(120px) rotate(-60.0deg);"/><img alt="motorola" class="half-orbit-logo" src="motorola.png" style="transform: rotate(90.0deg) translateX(120px) rotate(-90.0deg);"/><img alt="huawei" class="half-orbit-logo" src="huawei.png" style="transform: rotate(120.0deg) translateX(120px) rotate(-120.0deg);"/><img alt="google" class="half-orbit-logo" src="google.png" style="transform: rotate(150.0deg) translateX(120px) rotate(-150.0deg);"/><img alt="acer" class="half-orbit-logo" src="acer.png" style="transform: rotate(180.0deg) translateX(120px) rotate(-180.0deg);"/></div>
+<div class="saturn-orbit"><img alt="apple" class="orbit-logo-saturn" src="apple.png" style="transform: rotate(0.0deg) translateX(150px) rotate(-0.0deg);"/><img alt="samsung" class="orbit-logo-saturn" src="samsung.png" style="transform: rotate(30.0deg) translateX(150px) rotate(-30.0deg);"/><img alt="xiaomi" class="orbit-logo-saturn" src="xiaomi.png" style="transform: rotate(60.0deg) translateX(150px) rotate(-60.0deg);"/><img alt="motorola" class="orbit-logo-saturn" src="motorola.png" style="transform: rotate(90.0deg) translateX(150px) rotate(-90.0deg);"/><img alt="huawei" class="orbit-logo-saturn" src="huawei.png" style="transform: rotate(120.0deg) translateX(150px) rotate(-120.0deg);"/><img alt="google" class="orbit-logo-saturn" src="google.png" style="transform: rotate(150.0deg) translateX(150px) rotate(-150.0deg);"/><img alt="acer" class="orbit-logo-saturn" src="acer.png" style="transform: rotate(180.0deg) translateX(150px) rotate(-180.0deg);"/><img alt="hp" class="orbit-logo-saturn" src="hp.png" style="transform: rotate(210.0deg) translateX(150px) rotate(-210.0deg);"/><img alt="sony" class="orbit-logo-saturn" src="sony.png" style="transform: rotate(240.0deg) translateX(150px) rotate(-240.0deg);"/><img alt="android" class="orbit-logo-saturn" src="android.png" style="transform: rotate(270.0deg) translateX(150px) rotate(-270.0deg);"/><img alt="revl" class="orbit-logo-saturn" src="revl.png" style="transform: rotate(300.0deg) translateX(150px) rotate(-300.0deg);"/><img alt="lg" class="orbit-logo-saturn" src="lg.png" style="transform: rotate(330.0deg) translateX(150px) rotate(-330.0deg);"/></div><div class="logo-center-wrapper"><img alt="Fix&amp;Go Logo" class="logo" src="fixgo_logo_transparent.png"/></div>
 <div class="language-switcher">
 <button onclick="setLanguage('en')">EN</button>
 <button onclick="setLanguage('ua')">UA</button>
