@@ -259,46 +259,36 @@
   100% { transform: rotate(360deg); }
 }
 
-.fixgo-center {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
+.logo-train-container {
+  overflow: hidden;
+  width: 100%;
+  background: transparent;
+  padding: 10px 0;
+  margin-top: 20px;
 }
 
-.fixgo-center .logo {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+.logo-train-track {
+  display: flex;
+  gap: 30px;
+  animation: moveLogos 30s linear infinite;
 }
 
-.fixgo-center .saturn-orbit {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 300px;
-  animation: spin 40s linear infinite;
-  z-index: 1;
+.logo-train-img {
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
 }
 
-.fixgo-center .orbit-logo-saturn {
-  position: absolute;
-  top: 125px;
-  left: 125px;
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  transform-origin: 25px -100px;
+@keyframes moveLogos {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 </style>
 </head>
 <body>
 <header>
-<div class="logo-center-wrapper"><div class="fixgo-center"><div class="saturn-orbit"><img alt="apple" class="orbit-logo-saturn" src="apple.png" style="transform: rotate(0.0deg) translateX(150px) rotate(-0.0deg);"/><img alt="samsung" class="orbit-logo-saturn" src="samsung.png" style="transform: rotate(30.0deg) translateX(150px) rotate(-30.0deg);"/><img alt="xiaomi" class="orbit-logo-saturn" src="xiaomi.png" style="transform: rotate(60.0deg) translateX(150px) rotate(-60.0deg);"/><img alt="motorola" class="orbit-logo-saturn" src="motorola.png" style="transform: rotate(90.0deg) translateX(150px) rotate(-90.0deg);"/><img alt="huawei" class="orbit-logo-saturn" src="huawei.png" style="transform: rotate(120.0deg) translateX(150px) rotate(-120.0deg);"/><img alt="google" class="orbit-logo-saturn" src="google.png" style="transform: rotate(150.0deg) translateX(150px) rotate(-150.0deg);"/><img alt="acer" class="orbit-logo-saturn" src="acer.png" style="transform: rotate(180.0deg) translateX(150px) rotate(-180.0deg);"/><img alt="hp" class="orbit-logo-saturn" src="hp.png" style="transform: rotate(210.0deg) translateX(150px) rotate(-210.0deg);"/><img alt="sony" class="orbit-logo-saturn" src="sony.png" style="transform: rotate(240.0deg) translateX(150px) rotate(-240.0deg);"/><img alt="android" class="orbit-logo-saturn" src="android.png" style="transform: rotate(270.0deg) translateX(150px) rotate(-270.0deg);"/><img alt="revl" class="orbit-logo-saturn" src="revl.png" style="transform: rotate(300.0deg) translateX(150px) rotate(-300.0deg);"/><img alt="lg" class="orbit-logo-saturn" src="lg.png" style="transform: rotate(330.0deg) translateX(150px) rotate(-330.0deg);"/></div><img alt="Fix&amp;Go Logo" class="logo" src="fixgo_logo_transparent.png"/></div></div>
-<div class="language-switcher">
+
+<div class="logo-train-container"><div class="logo-train-track"><img alt="apple" class="logo-train-img" src="apple.png"/><img alt="samsung" class="logo-train-img" src="samsung.png"/><img alt="xiaomi" class="logo-train-img" src="xiaomi.png"/><img alt="motorola" class="logo-train-img" src="motorola.png"/><img alt="huawei" class="logo-train-img" src="huawei.png"/><img alt="google" class="logo-train-img" src="google.png"/><img alt="acer" class="logo-train-img" src="acer.png"/><img alt="hp" class="logo-train-img" src="hp.png"/><img alt="sony" class="logo-train-img" src="sony.png"/><img alt="android" class="logo-train-img" src="android.png"/><img alt="revl" class="logo-train-img" src="revl.png"/><img alt="lg" class="logo-train-img" src="lg.png"/><img alt="apple" class="logo-train-img" src="apple.png"/><img alt="samsung" class="logo-train-img" src="samsung.png"/><img alt="xiaomi" class="logo-train-img" src="xiaomi.png"/><img alt="motorola" class="logo-train-img" src="motorola.png"/><img alt="huawei" class="logo-train-img" src="huawei.png"/><img alt="google" class="logo-train-img" src="google.png"/><img alt="acer" class="logo-train-img" src="acer.png"/><img alt="hp" class="logo-train-img" src="hp.png"/><img alt="sony" class="logo-train-img" src="sony.png"/><img alt="android" class="logo-train-img" src="android.png"/><img alt="revl" class="logo-train-img" src="revl.png"/><img alt="lg" class="logo-train-img" src="lg.png"/></div></div><div class="language-switcher">
 <button onclick="setLanguage('en')">EN</button>
 <button onclick="setLanguage('ua')">UA</button>
 <button onclick="setLanguage('ru')">RU</button>
