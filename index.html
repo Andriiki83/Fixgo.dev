@@ -420,6 +420,17 @@
       document.getElementById("contact-title").innerText = translations[lang].contact_title;
       document.getElementById("gallery-title").innerText = translations[lang].gallery_title;
       document.getElementById("gallery-desc").innerText = translations[lang].gallery_desc;
+      const prices = translations[lang].prices;
+      if (prices) {
+        const tableBody = document.getElementById("prices-table");
+        tableBody.innerHTML = "";
+        for (const row of prices) {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td>${row[0]}</td><td>${row[1]}</td>`;
+          tableBody.appendChild(tr);
+        }
+      }
+
     }
   </script>
 </body>
